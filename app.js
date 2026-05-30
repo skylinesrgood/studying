@@ -1,4 +1,4 @@
-const gameCdnBase = "https://gl.githack.com/3kh0/3kh0-assets/-/raw/main/";
+const gameCdnBase = "https://gl.githack.com/3kh0/3kh0-assets/raw/main/";
 const imageBase = "https://gitlab.com/3kh0/3kh0-assets/-/raw/main/";
 const colors = ["#55f0b2", "#ffd166", "#77d5ff", "#ff665c"];
 
@@ -188,7 +188,7 @@ function render() {
     card.innerHTML = `
       <span class="thumb-wrap">
         <img src="${game.image}" alt="" loading="lazy" data-fallback="${game.fallbackImage}">
-        <span class="thumb-fallback">${escapeHtml(initials(game.title))}</span>
+        <span class="thumb-fallback">${escapeHtml(game.title)}</span>
       </span>
       <strong>${escapeHtml(game.title)}</strong>
       <span>${escapeHtml(game.category)}</span>
@@ -233,15 +233,6 @@ function encodePath(path) {
   return path.split("/").map((part) => encodeURIComponent(part)).join("/");
 }
 
-function initials(title) {
-  return title
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((word) => word[0])
-    .join("")
-    .toUpperCase();
-}
 
 searchInput.addEventListener("input", render);
 randomButton.addEventListener("click", openRandom);
