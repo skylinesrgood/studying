@@ -1,34 +1,26 @@
 const gameCdnBase = "https://gl.githack.com/3kh0/3kh0-assets/raw/main/";
 const imageBase = "https://gitlab.com/3kh0/3kh0-assets/-/raw/main/";
+const friendBase = "https://geodmeeee.github.io/forksnspoons/";
 const colors = ["#55f0b2", "#ffd166", "#77d5ff", "#ff665c"];
 
 const games = [
+  ["1v1.lol", "games/1v1.lol/index.html", "images/1v1.lol.png", "Action", "friend"],
+  ["99 Balls", "99balls", "Arcade"],
   ["2048", "2048", "Puzzle"],
   ["2048 Multitask", "2048-multitask", "Puzzle"],
-  ["10 Minutes Till Dawn", "10-minutes-till-dawn", "Action"],
-  ["1v1.LOL", "1v1lol", "Shooter"],
-  ["99 Balls", "99balls", "Arcade"],
+  ["10 Minutes Till Dawn", "games/Ten Minutes Till Dawn/index.html", "images/Ten Minutes Till Dawn.png", "Action", "friend"],
   ["Achievement Unlocked", "achievementunlocked", "Platform"],
   ["A Dark Room", "adarkroom", "Strategy"],
-  ["Adventure Drivers", "adventure-drivers", "Racing"],
-  ["Ages of Conflict", "ages-of-conflict", "Strategy"],
+  ["Adventure Drivers", "games/Adventure Drivers/index.html", "images/Adventure Drivers.png", "Racing", "friend"],
   ["Alien Hominid", "alienhominid", "Action"],
   ["Align 4", "align-4", "Board"],
-  ["Amazing Rope Police", "amazing-rope-police", "Action"],
-  ["Among Us", "among-us", "Party"],
-  ["Angry Sharks", "angry-sharks", "Arcade"],
   ["Avalanche", "avalanche", "Arcade"],
-  ["Awesome Tanks 2", "awesometanks2", "Action"],
-  ["Backrooms", "backrooms", "Horror"],
-  ["Bacon May Die", "bacon-may-die", "Action"],
-  ["Bad Ice Cream", "bad-ice-cream", "Arcade"],
-  ["Bad Ice Cream 2", "bad-ice-cream-2", "Arcade"],
-  ["Bad Ice Cream 3", "bad-ice-cream-3", "Arcade"],
-  ["Baldi's Basics", "baldis-basics", "Horror"],
-  ["Basket Random", "basket-random", "Sports"],
-  ["Basketball Stars", "basketball-stars", "Sports"],
-  ["Basket Bros", "basketbros-io", "Sports"],
-  ["BitLife", "bitlife", "Sim"],
+  ["Bad Ice Cream", "games/Bad Ice Cream/index.html", "images/Bad Ice Cream.png", "Arcade", "friend"],
+  ["Bad Ice Cream 2", "games/Bad Ice Cream 2/index.html", "images/Bad Ice Cream 2.png", "Arcade", "friend"],
+  ["Bad Ice Cream 3", "games/Bad Ice Cream 3/index.html", "images/Bad Ice Cream 3.png", "Arcade", "friend"],
+  ["Basket Random", "games/Basket Random/index.html", "images/Basket Random.png", "Sports", "friend"],
+  ["Basketball Stars", "games/BasketBall Stars/index.html", "images/Basketball Stars.png", "Sports", "friend"],
+  ["BitLife", "games/Bitlife/index.html", "images/Bitlife.png", "Sim", "friend"],
   ["Black Knight", "blackknight", "Action"],
   ["Bloons TD", "bloonstd", "Strategy"],
   ["Bloons TD 2", "bloonstd2", "Strategy"],
@@ -82,7 +74,6 @@ const games = [
   ["Geometry Dash", "geodash", "Runner"],
   ["Getaway Shootout", "getaway-shootout", "Action"],
   ["Google Snake", "google-snake", "Arcade"],
-  ["Happy Wheels", "happywheels", "Physics"],
   ["HexGL", "HexGL", "Racing"],
   ["Idle Breakout", "idle-breakout", "Clicker"],
   ["Impossible Quiz", "impossiblequiz", "Puzzle"],
@@ -119,13 +110,14 @@ const games = [
   ["Volley Random", "volley-random", "Sports"],
   ["Wordle", "wordle", "Word"],
   ["World's Hardest Game", "worlds-hardest-game", "Arcade"]
-].map(([title, slug, category], index) => ({
+].map(([title, slug, imageOrCategory, category, source], index) => ({
   title,
   slug,
-  category,
-  url: `${gameCdnBase}${encodePath(slug)}/index.html`,
-  image: `${imageBase}${encodePath(slug)}/thumb.png`,
-  fallbackImage: `${imageBase}${encodePath(slug)}/${encodeURIComponent(slug.split("/").pop())}.png`,
+  category: source === "friend" ? category : imageOrCategory,
+  source: source || "3kh0",
+  url: source === "friend" ? `${friendBase}${encodePath(slug)}` : `${gameCdnBase}${encodePath(slug)}/index.html`,
+  image: source === "friend" ? `${friendBase}${encodePath(imageOrCategory)}` : `${imageBase}${encodePath(slug)}/thumb.png`,
+  fallbackImage: source === "friend" ? `${friendBase}${encodePath(imageOrCategory)}` : `${imageBase}${encodePath(slug)}/${encodeURIComponent(slug.split("/").pop())}.png`,
   accent: colors[index % colors.length]
 }));
 
@@ -207,7 +199,7 @@ function render() {
 
 function openGame(game) {
   playerTitle.textContent = game.title;
-  playerMeta.textContent = `${game.category} | Credit: 3kh0 Assets`;
+  playerMeta.textContent = `${game.category} | Credit: ${game.source === "friend" ? "Forks N Frogz" : "3kh0 Assets"}`;
   frame.src = game.url;
   dialog.showModal();
 }
