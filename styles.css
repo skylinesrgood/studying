@@ -22,21 +22,14 @@ body {
   min-height: 100vh;
   margin: 0;
   color: var(--ink);
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 42px),
-    linear-gradient(rgba(255, 255, 255, 0.1) 0 1px, transparent 1px 42px),
-    radial-gradient(circle at 18% 12%, rgba(216, 240, 255, 0.5), transparent 30rem),
-    radial-gradient(circle at 85% 20%, rgba(255, 184, 216, 0.28), transparent 26rem),
-    var(--bg);
+  background: #000;
 }
 
 #cloudBackground {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background:
-    radial-gradient(circle at 20% 10%, rgba(255, 184, 216, 0.28), transparent 28rem),
-    linear-gradient(180deg, #121b72, #a9d4ef);
+  background: #000;
 }
 
 body::before {
@@ -45,7 +38,7 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(169, 212, 239, 0.12));
+  background: transparent;
 }
 
 button,
