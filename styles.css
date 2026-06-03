@@ -257,14 +257,20 @@ border-radius: 0;
 .game-card::after {
   content: "";
   position: absolute;
-  inset: -42%;
+  inset: -15%;
   z-index: 0;
   opacity: 0;
-  background:
-    radial-gradient(circle at 50% 45%, rgba(255, 184, 216, 0.72) 0 12%, rgba(255, 184, 216, 0.34) 26%, rgba(169, 212, 239, 0.14) 52%, transparent 72%);
-  filter: blur(14px);
+ background:
+  radial-gradient(
+    circle at center,
+    rgba(24, 255, 34, 0.65) 0%,
+    rgba(24, 255, 34, 0.30) 25%,
+    rgba(24, 255, 34, 0.10) 45%,
+    transparent 60%
+  );
+  filter: blur(20px);
   transition: opacity 240ms ease, transform 240ms ease;
-  transform: scale(0.78);
+  transform: scale(0.65);
 }
 
 .game-card strong {
