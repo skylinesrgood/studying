@@ -3,31 +3,33 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Study Break Shelf</title>
+    <title>Grades</title>
+    <link rel="icon" type="image/png" href="assets/favicon3.png">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div id="cloudBackground" aria-hidden="true"></div>
     <header class="topbar">
       <a class="brand" href="#library" aria-label="Study Break Shelf home">
-        <img src="assets/logo.svg" alt="">
-        <span>Study Break Shelf</span>
+        <img src="assets/newicon2.png" alt="">
+        <span>skylinesrgood site</span>
       </a>
     </header>
 
     <main class="app-shell">
       <aside id="library" class="sidebar">
         <section class="intro">
-          <p class="eyebrow">Game library</p>
-          <h1>Study Break Shelf</h1>
+          <p class="eyebrow">All assignments</p>
+          <h1>skyline</h1>
           <p>
-            A clean arcade launcher using 3kh0 Assets with credit. Pick a game,
-            search fast, and play without leaving the page.
+            A lot of "assignments" with "studying" for 
+            all "periods" with imported "assignments" 
+            from 3kh0 👍
           </p>
         </section>
 
         <label class="search-box">
-          <span>Search games</span>
+          <span>Search assignments</span>
           <input id="searchInput" type="search" placeholder="2048, run, slope...">
         </label>
 
@@ -35,7 +37,7 @@
 
         <section class="credits">
           <strong>Credit</strong>
-          <span>Game files: 3kh0 Assets. Launcher UI: yours.</span>
+          <span>Imported "assignments": 3kh0</span>
         </section>
       </aside>
 
@@ -43,9 +45,9 @@
         <div class="toolbar">
           <div>
             <p class="eyebrow">Now browsing</p>
-            <h2 id="resultTitle">All Games</h2>
+            <h2 id="resultTitle">All assignments</h2>
           </div>
-          <p id="resultCount" class="count">0 games</p>
+          <p id="resultCount" class="count">0 assignments</p>
         </div>
 
         <div id="gameGrid" class="game-grid" aria-live="polite"></div>
@@ -56,7 +58,7 @@
       <div class="player-top">
         <div>
           <p id="playerMeta" class="eyebrow">Ready</p>
-          <h2 id="playerTitle">Game</h2>
+          <h2 id="playerTitle">Study</h2>
         </div>
         <div class="player-actions">
           <button id="fullscreenButton" type="button">Fullscreen</button>
@@ -67,7 +69,7 @@
     </dialog>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
