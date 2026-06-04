@@ -269,7 +269,7 @@ border-radius: 0;
     transparent 60%
   );
   filter: blur(20px);
-  transition: opacity 90ms ease, transform 90ms ease;
+  transition: opacity 60ms ease, transform 60ms ease;
   transform: scale(0.65);
 }
 
