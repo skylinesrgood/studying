@@ -268,7 +268,7 @@ border-radius: 0;
     rgba(24, 255, 34, 0.10) 45%,
     transparent 60%
   );
-  filter: blur(20px);
+  filter: blur(12px);
   transition: opacity 60ms ease, transform 60ms ease;
   transform: scale(0.65);
 }
