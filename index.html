@@ -84,6 +84,14 @@
 </dialog>
 
 <script src="app.js"></script>
+   <script>
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "F3") {
+      event.preventDefault();
+      window.location.href = "class.html";
+    }
+  });
+</script>
 
 </body>
 </html>
